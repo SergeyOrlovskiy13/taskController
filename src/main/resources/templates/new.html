@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New User</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/}" th:object="${user}">
+    <label for="iduser">Enter id</label>
+    <input type="text" th:field="*{iduser}" id="iduser"/>
+    <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error1</div>
+    <br/>
+    <label for="username">Enter name</label>
+    <input type="text" th:field="*{username}" id="username"/>
+    <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error1</div>
+    <br/>
+    <label for="surname">Enter surname</label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Name Error2</div>
+    <br/>
+    <label for="year">Enter year</label>
+    <input type="text" th:field="*{year}" id="year"/>
+<!--    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Name Error6</div>-->
+    <label for="month">Enter month</label>
+    <input type="text" th:field="*{month}" id="month"/>
+<!--    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Name Error7</div>-->
+    <label for="year">Enter day</label>
+    <input type="text" th:field="*{day}" id="day"/>
+<!--    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{day}">Name Error6</div>-->
+    <br/>
+    <label for="email">Enter email</label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error3</div>
+    <br/>
+    <label for="address">Enter addres</label>
+    <input type="text" th:field="*{address}" id="address"/>
+    <br/>
+    <label for="phone">Enter phone</label>
+    <input type="text" th:field="*{phone}" id="phone"/>
+    <br/>
+    <input type="submit" value="Create">
+</form>
+</body>
+</html>
